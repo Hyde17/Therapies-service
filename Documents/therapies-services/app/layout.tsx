@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
 import Header from "@/components/header";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Talking Therapies",
@@ -21,13 +11,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="font-body h-full antialiased">
       <body className="min-h-full w-full  flex flex-col">
         <Header />
-        <main className="w-full max-w-300 px-2 py-2.5"> {children}</main>
+        <main className="w-full max-w-300 px-2 py-2.5 "> {children}</main>
       </body>
     </html>
   );
