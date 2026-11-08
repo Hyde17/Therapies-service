@@ -1,5 +1,6 @@
 @import "tailwindcss";
-:root {
+* {
+  box-sizing: border-box;
 }
 
 @theme {
@@ -17,4 +18,8 @@
   --color-line: #e0d6c2;
   --font-head: "DM Sans", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+}
+
+.home {
+  font-size: 64ch;
 }

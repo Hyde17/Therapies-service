@@ -1,69 +1,71 @@
 "use client";
 import Link from "next/link";
 import Button from "./button";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
-  const handleOpenMenu = () => {
-    console.log("clicked");
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const handleConsultation = () => {
-    console.log("navigate to consult");
+    router.push("/contact");
   };
 
   return (
-    <header className="w-full relative border-b-line  bg-bg px-2 py-2.5">
-      <nav className="w-full min-h-18  h-20 max-w-300 flex items-center justify-around gap-3 sticky font-[head] font-normal  ">
+    <header className="w-full sticky top-0 z-40 bg-bg px-2 py-2.5 border-b-2 border-line">
+      <nav className="w-full relative  min-h-18 h-20 max-w-300 flex items-center justify-evenly font-[head] font-normal mx-auto py-0  px-[clamp(8px,4vw,10px)]">
         <article>
           <Link href="/" className="text-brand font-head font-bold text-xl">
-            Talking Therapies
+            Talking <span className="block"> Therapies</span>
           </Link>
         </article>
-        <menu className="hidden md:flex items-center gap-1">
+        <menu className="menu hidden md:flex items-center gap-1 ">
           <Link
             href="/"
-            className="text-base text-text font-body px-2 py-2.5 active:border-b-2 active:border-terra active:border-b-md"
+            className="text-base text-text head px-2 py-2.5 active:border-b-3  active:border-terra active:border-b-md font-semibold"
           >
             Home
           </Link>
           <Link
             href="/help"
-            className="text-base text-text font-body px-2  active:border-b-2 active:border-terra active:border-b-md grid"
+            className="text-base text-text head px-2  active:border-b-3  active:border-terra active:border-b-md font-semibold "
           >
-            How we can <span className="">help</span>
+            How we can <span className="block">help</span>
           </Link>
           <Link
             href="/approach"
-            className="text-base text-text font-body px-2 active:border-b-2 active:border-terra active:border-b-md grid"
+            className="text-base text-text head px-2 active:border-b-3  active:border-terra active:border-b-md font-semibold"
           >
-            Our <span>approach</span>
+            Our <span className="block">approach</span>
           </Link>
           <Link
             href="/about"
-            className="text-base text-text font-body px-2 py-2.5 active:border-b-2 active:border-terra active:border-b-md"
+            className="text-base text-text head px-2 py-2.5 active:border-b-3  active:border-terra active:border-b-md font-semibold"
           >
             About
           </Link>
           <Link
             href="/resources"
-            className="text-base text-text font-body px-2 py-2.5 active:border-b-2 active:border-terra active:border-b-md"
+            className="text-base text-text head px-2 py-2.5 active:border-b-3  active:border-terra active:border-b-md font-semibold"
           >
             Resources
           </Link>
           <Link
             href="/faq"
-            className="text-base text-text font-body px-2 py-2.5 active:border-b-2 active:border-b-terra active:border-b-md"
+            className="text-base text-text head px-2 py-2.5 active:border-b-3  active:border-b-terra active:border-b-md font-semibold"
           >
             FAQs
           </Link>
           <Link
             href="/contact"
-            className="text-base text-text font-body px-2 py-2.5 active:border-b-2 active:border-terra active:border-b-md"
+            className="text-base text-text head px-2 py-2.5 active:border-b-3  active:border-terra active:border-b-md font-semibold"
           >
             Contacts
           </Link>
         </menu>
-        {window.innerWidth > 428 ? (
+        {/* Desktop */}
+        <div className="hidden md:flex items-center ">
           <Button
             onClick={handleConsultation}
             color="brand"
@@ -71,81 +73,85 @@ export default function Header() {
             text="brand-ink"
           >
             Book{" "}
-            <span className="grid mx-2">
-              an <span></span>initial
-            </span>{" "}
+            <span className="grid text-left mx-1">
+              an <span> initial</span>
+            </span>
             consultation
           </Button>
-        ) : (
+        </div>
+
+        {/* Mobile */}
+        <div className=" md:hidden ">
           <Button
             onClick={handleConsultation}
             color="brand"
             border="brand"
             text="brand-ink"
           >
-            Book consultation
+            Book <span className="block">consultation</span>
           </Button>
-        )}
-        {window.innerWidth < 428 && (
+        </div>
+        <div className="flex md:hidden">
           <Button
-            onClick={handleOpenMenu}
-            color="brand-ink"
-            border="brand-ink"
+            onClick={() => setIsOpen(!isOpen)}
+            color="bg"
+            border="brand"
             text="brand"
           >
             Menu
           </Button>
-        )}
+        </div>
       </nav>
-
-      {window.innerWidth < 428 ? (
-        <section className="menu absolute w-full bg-sage left-0 right-0 top-20">
-          <menu className=" w-full hidden md:flex flex-col gap-1 h-auto px-2 py-2.5 ">
-            <Link
-              href="/"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2 active:border-b-terra active:border-b-md"
-            >
-              Home
-            </Link>
-            <Link
-              href="/help"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2  active:border-b-terra active:border-b-md"
-            >
-              How we can help
-            </Link>
-            <Link
-              href="/approach"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2  active:border-b-terra active:border-b-md"
-            >
-              Our approach
-            </Link>
-            <Link
-              href="/about"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2  active:border-b-terra active:border-b-md"
-            >
-              About
-            </Link>
-            <Link
-              href="/resources"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2  active:border-b-terra active:border-b-md"
-            >
-              Resources
-            </Link>
-            <Link
-              href="/faq"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2  active:border-b-terra active:border-b-md"
-            >
-              FAQs
-            </Link>
-            <Link
-              href="/contact"
-              className="text-base text-text font-body px-2 py-2.5 active:border-b-2  active:border-b-terra active:border-b-md"
-            >
-              Contacts
-            </Link>
-          </menu>
-        </section>
-      ) : null}
+      {isOpen && (
+        <div className="flex md:hidden">
+          <section className="menu absolute w-full bg-sage left-0 right-0 top-20">
+            <menu className=" w-full flex flex-col gap-1 h-auto px-2 py-2.5 ">
+              <Link
+                href="/"
+                className="text-base text-text head px-2 py-2.5 active:border-b-3 active:py-2 active:border-b-terra active:border-b-md font-semibold"
+              >
+                Home
+              </Link>
+              <Link
+                href="/help"
+                className="text-base text-text head px-2 py-2.5 active:border-b-3 active:py-2  active:border-b-terra active:border-b-md font-semibold"
+              >
+                How we can help
+              </Link>
+              <Link
+                href="/approach"
+                className="text-base text-text head px-2 py-2.5 active:border-b-3 active:py-2  active:border-b-terra active:border-b-md font-semibold"
+              >
+                Our approach
+              </Link>
+              <Link
+                href="/about"
+                className="text-base text-text head px-2 py-2.5 active:border-b-3 active:py-2  active:border-b-terra active:border-b-md font-semibold"
+              >
+                About
+              </Link>
+              <Link
+                href="/resources"
+                className="text-base text-text head px-2 py-2.5 active:border-b-3 active:py-2  active:border-b-terra active:border-b-md font-semibold"
+              >
+                Resources
+              </Link>
+              <Link
+                href="/faq"
+                className="text-base text-text head px-2 py-2.5 active:border-b-3 active:py-2  active:border-b-terra active:border-b-md font-semibold"
+              >
+                FAQs
+              </Link>
+              <Link
+                href="/contact"
+                className="text-base text-text head px-2 py-2.5  font-semibold"
+              >
+                Contacts
+              </Link>
+            </menu>
+          </section>
+        </div>
+      )}
     </header>
   );
 }
