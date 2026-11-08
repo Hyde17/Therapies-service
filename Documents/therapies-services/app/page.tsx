@@ -19,7 +19,7 @@ export default function Home() {
           <span className="w-6 h-1 rounded-sm bg-ochre mr-2.5"> </span>A space
           to understand and move forward
         </small>
-        <h1 className="text-[2.25rem] -bg-conic-0 leading-[1.18] text-brand font-semibold font-head mb-[0.6em] --tracking-[0.15em]line-clamp-10 md:pr-30">
+        <h1 className="text-[3.75rem] -bg-conic-0 leading-[1.18] text-brand font-semibold font-head  --tracking-[0.15em]line-clamp-10 ">
           You don’t have to work through difficult feelings alone.
         </h1>
         <p className="text-muted text-4.5 max-w-[64ch] mb-3">
