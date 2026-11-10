@@ -67,7 +67,6 @@ export default function Home() {
           </ul>
         </article>
         <figure className="aspect-4/3 border-2 border-terra h-92 rounded-[20px] relative ">
-          {/* <span className=""></span> */}
           <Image
             src=""
             alt="A therapist and a client talking in a bright, calm room"
