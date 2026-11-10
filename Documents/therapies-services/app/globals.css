@@ -20,6 +20,12 @@
   --font-body: "Inter", system-ui, sans-serif;
 }
 
-.home {
-  font-size: 64ch;
+h1,
+h2,
+h3 {
+  font-family: var(--head);
+  font-weight: 600;
+  color: var(--brand);
+  line-height: 1.18;
+  margin: 0 0 0.6em;
 }

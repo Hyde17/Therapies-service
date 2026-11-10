@@ -10,13 +10,13 @@ export default function CardSummary({
   lists,
 }: CardSummaryProps) {
   return (
-    <article>
+    <article className="grid gap-3">
       <p>{description}</p>
       <article>
         <strong>Common experiences</strong>
-        <ul>{lists}</ul>
-        <p>{conclusion}</p>
+        <ul className="grid gap-2 pl-5 ">{lists}</ul>
       </article>
+      <p className="text-base">{conclusion}</p>
     </article>
   );
 }

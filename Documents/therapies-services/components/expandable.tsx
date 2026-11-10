@@ -1,31 +1,34 @@
 "use client";
-import React, { useState } from "react";
+
+import { FaCaretDown } from "react-icons/fa6";
+import { FaCaretRight } from "react-icons/fa";
+import { useExpandable } from "@/context/expandable-context";
 
 type ExpandableProps = {
+  id: string;
   title: string;
-  children: React.FunctionComponent;
+  children: React.ReactNode;
 };
-export default function Expandable({ title, children }: ExpandableProps) {
-  const [open, setOpen] = useState(false);
+export default function Expandable({ id, title, children }: ExpandableProps) {
+  const { expandedCard, toggleCard } = useExpandable();
+
+  const expand = expandedCard === id;
   return (
     <div>
-      <p>
-        {open ? (
+      <p className="flex items-center font-semibold text-base text-brand min-h-6 mb-3 gap-1 border-t border-t-line pt-2">
+        <span>
           <button
             className="border-none outline-none cursor-pointer"
-            onClick={() => setOpen(!open)}
+            onClick={() => toggleCard(id)}
+            aria-expanded={expand}
           >
-            caret
+            {expand ? <FaCaretDown /> : <FaCaretRight />}
           </button>
-        ) : (
-          <button className="border-none outline-none cursor-pointer">
-            caret
-          </button>
-        )}
+        </span>
 
         {title}
       </p>
-      <article>{children}</article>
+      {expand && <article>{children}</article>}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import Header from "@/components/header";
+import { ExpandableProvider } from "@/context/expandable-context";
 
 export const metadata: Metadata = {
   title: "Talking Therapies",
@@ -13,10 +14,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="font-body h-full antialiased">
       <body className="min-h-full w-full flex flex-col">
-        <Header />
-        <main className="w-full text-text font-normal text-[1.0625rem] font-body ">
-          {children}
-        </main>
+        <ExpandableProvider>
+          <Header />
+          <main className="w-full text-text font-normal text-[1.0625rem] font-body ">
+            {children}
+          </main>
+        </ExpandableProvider>
       </body>
     </html>
   );
