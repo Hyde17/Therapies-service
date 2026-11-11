@@ -65,7 +65,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`${backgroundColors[color]} border-2 flex items-center justify-center font-bold font-head text-base cursor-pointer ${borderColors[border]} ${textColors[text]}  px-2  md:px-4 md:py-1 rounded-lg min-h-12 text-nowrap`}
+      className={`${backgroundColors[color]} border-2 flex items-center justify-center font-bold font-head text-base cursor-pointer ${borderColors[border]} ${textColors[text]} px-2  md:px-4 md:py-1 rounded-lg min-h-12 text-nowrap`}
     >
       {children}
     </button>

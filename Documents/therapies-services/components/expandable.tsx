@@ -5,7 +5,7 @@ import { FaCaretRight } from "react-icons/fa";
 import { useExpandable } from "@/context/expandable-context";
 
 type ExpandableProps = {
-  id: string;
+  id: string | number;
   title: string;
   children: React.ReactNode;
 };

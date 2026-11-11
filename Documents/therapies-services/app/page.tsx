@@ -2,6 +2,8 @@
 import Button from "@/components/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import heroImg from "../public/hero-img.jpg";
+import secondHeroImg from "../public/second-hero.jpg";
 
 export default function Home() {
   const router = useRouter();
@@ -66,25 +68,25 @@ export default function Home() {
             </article>
           </ul>
         </article>
-        <figure className="aspect-4/3 border-2 border-terra h-92 rounded-[20px] relative ">
+        <figure className="aspect-4/3  h-92 rounded-[20px] relative ">
           <Image
-            src=""
+            src={heroImg}
             alt="A therapist and a client talking in a bright, calm room"
-            className="object-cover w-full relative rounded-[20px]z-8"
+            className="object-cover w-full relative rounded-[20px] z-8  aspect-4/3"
           />
-          <span className="before:content-['']  before:absolute before:bg-sage before:rounded-[28px] before:w-full before:h-92 before:rotate-3 before:inset-6.5 z-1"></span>
+          <span className="before:content-['']  before:absolute before:bg-sage before:rounded-[28px] before:w-full before:h-92 before:rotate-3 before:inset-6.5"></span>
 
-          <figcaption className="absolute -bottom-4.5 max-w-63.5 left-3 px-3 py-4 bg-card border-line border font-head text-base p-2 text-brand">
+          <figcaption className="absolute -bottom-1 max-w-63.5 left-3 px-3 py-4 bg-card border-line border font-head text-base p-2 text-brand z-10 rounded-[14px]">
             A thoughtful, confidential space to talk.
           </figcaption>
         </figure>
       </section>
       <section className="w-full grid md:grid-cols-2 place-items-center gap-12 bg-sage p-[clamp(10vw,20px,8vw)]">
-        <figure className="aspect-4/3 border-2 border-terra h-80 rounded-[20px]">
+        <figure className="aspect-4/3  h-80 rounded-[20px]">
           <Image
-            src=""
+            src={secondHeroImg}
             alt="A therapist listening attentively during a session"
-            className="object-cover w-full rounded-[20px]"
+            className="object-cover w-full rounded-[20px] aspect-4/3"
           />
         </figure>
         <article className=" gap-3">
