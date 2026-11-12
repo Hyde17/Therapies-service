@@ -56,3 +56,32 @@ export const traumaLists = [
     details: "Avoiding reminders",
   },
 ];
+
+export const aboutData = [
+  {
+    title: "Our values",
+    summary: "Warmth, honesty, and respect for your pace and choices.",
+  },
+  {
+    title: "Session format",
+    summary: "Online and/or in-person details, session length and setting.]",
+  },
+  {
+    title: "Standards and confidentiality",
+    summary:
+      "We keep your information confidential, with legal and safeguarding exceptions explained at the start.",
+  },
+];
+export const therapists = [
+  {
+    name: "Therapist name",
+    title: "professional title",
+    brief:
+      "Write a short, warm introduction in the first person or third person.",
+
+    qualification: "qualification, awarding body]",
+    reg: "body and number",
+    areas: ["list"],
+    img: "",
+  },
+];
