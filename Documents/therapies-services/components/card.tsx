@@ -7,11 +7,21 @@ type CardProps = {
   info: string;
   summary?: React.ReactNode;
   icon?: number;
+  equalHeight?: boolean;
 };
 
-export default function Card({ id, icon, title, info, summary }: CardProps) {
+export default function Card({
+  id,
+  icon,
+  title,
+  info,
+  summary,
+  equalHeight = true,
+}: CardProps) {
   return (
-    <article className="bg-card border min-w-60 border-line rounded-2xl p-6 h-auto  self-start">
+    <article
+      className={`bg-card border min-w-60 border-line rounded-2xl p-6  ${equalHeight ? "h-full" : "h-auto self-start"}`}
+    >
       <article className=" ">
         {icon ? (
           <p className="bg-ochre rounded-full w-10 h-10 text=[#2b2a24] grid place-items-center font-semibold text-[1.1rem] mb-4">

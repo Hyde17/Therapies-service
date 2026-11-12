@@ -5,7 +5,7 @@ import { anxietyLists, moodLists, ocdLists, traumaLists } from "@/data";
 export default function HelpPage() {
   return (
     <section>
-      <section className="w-full  bg-bg py-[4vw] grid gap-[0.6em] px-[10vw]">
+      <section className="w-full bg-bg py-[4vw] grid gap-[0.6em] px-[10vw]">
         <h2 className="--tracking-[0.01em] text-[2.25rem] text-brand  mb-[0.6em]">
           How we can help?
         </h2>
